@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        * {
+            font-family: "微软雅黑" "宋体";
+            font-size: 14px;
+            color: #000000;        
+        }
+        .container {
+            display:block;
+            max-width:1300px;
+            margin:0 auto; 
+        }
+       .header {
+           display:inline-block;
+            width:1300px;
+            height:10%;
+            background:#ffffff;
+        }
+        .logo {
+            font-size:45px;
+            color:red;
+            float:left;
+        }
+        /*.search {
+            width: 1000px;
+            height: 35px;
+            display: flex;
+        }*/
+        .text{           
+            width:613px;
+            height:35px;
+            margin:15px;
+            border:3px solid #ff6a00;  
+            float:none;
+            font-stretch:wider;
+        }
+            .text:focus{
+                box-shadow:inset 0 0 2px 2px #ff6a00;
+            }
+        .submit {
+            width: 80px;
+            height: 35px;
+            float: none;
+            border: 1px solid #ff6a00;
+            background: #ff6a00;
+        }
+            .submit:hover {
+                background:red;
+            }
+            .submit:active{
+                background:#ff6a09;
+            }
+        .login {
+            width: 100px;
+            height: 35px;
+            /*border-radius:50%;*/
+            float: right;
+            margin: 15px;
+            border: 1px solid #ff6a00;
+            background: #ff6a00;
+            padding: 5px;
+        }
+        .login1 {
+            color:black;
+            font-weight:600;
+        }
+        .nav {
+            width: 1300px;
+            height: 40px;
+            margin: 0 auto;
+            background: #ff6a00;
+        }
+        .nav-1 {
+            width: 130px;
+            height: 40px;
+            color: white;
+            font-size: 24px;
+            font-weight: 500;
+            margin: 1px 20px;
+            padding: 2px;          
+        }               
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">趣车网</div>
+            <div class="search">
+                <center>
+                    <input type="text" class="text" placeholder="请输入车辆信息！" />
+                    <input type="submit" class="submit" name="submitBtn" value="搜索" />
+                    <div class="login">
+                        <a class="login1" href="/Login/Index">登 陆</a>/
+                        <a class="login1" href="/Register/Index">注 册</a>
+                    </div>
+                </center>
+            </div>
+        </div>    
+        <div class="nav">
+            <a class="nav-1" hrefa href="/Main/Index">首   页</a>
+            <a class="nav-1" href="/Main/Shouche">售   车</a>
+            <a class="nav-1" href="/Main/Zhoubian">周  边</a>
+            <a class="nav-1" href="/Main/Zixun">资  讯</a>
+            <a class="nav-1" href="/Main/Pinglun">评  论</a>
+            <a class="nav-1" href="/Main/DDZX">订单中心</a>
+        </div>          
+        @RenderBody()
+        <hr style="color:#808080;" />
+        <div class="footer">
+            <center>版权所有@趣车网</center>
+        </div>
+    </div>
+</body>
+</html>

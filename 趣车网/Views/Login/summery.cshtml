@@ -1,0 +1,35 @@
+﻿@model 趣车网.Models.UserInfo
+
+@if (Model == null)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="@Url.Action("Index","Login")">
+                登陆
+                <span class="glyphicon glyphicon-log-in"></span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","Register")">
+                注册
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+        </li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="#">
+                欢迎登陆&nbsp;&nbsp;&nbsp; @Model.UserName
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("LoginOut","Login")">
+                退出
+            </a>
+        </li>
+    </ul>
+}
+

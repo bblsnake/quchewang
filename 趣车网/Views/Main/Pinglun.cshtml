@@ -1,0 +1,76 @@
+﻿@model 趣车网.Models.UserInfo
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Pinglun</title>
+        <style>
+            .pl_top{
+                width:1200px;
+                height:auto;
+            }
+            .pl_text textarea {
+                width: 900px;
+                height: 100px;
+                margin: 10px 150px;
+                border: 2px solid #bbb;
+                /*list-style:none;*/
+            }
+            .pl_submit {
+                width:80px;
+                height:35px;
+                margin-left: 970px;
+                background: #5294DB;
+                border: #5294DB;
+            }
+                .pl_submit:active {
+                    background: #0094ff;
+                }
+            .pl_main{
+                width:1200px;
+                height:1000px;
+            }
+            .pl_username{
+                width:200px;
+                height:35px;
+                font-size:26px;
+                float:left;
+                color:#00ff21;
+            }
+                .pl_username:hover{
+                   color:#5294DB;
+                }
+                .pl_time {
+                    width: 1000px;
+                    height: 35px;
+                    float: left;
+                    margin-top: 15px;
+                }
+            .pl_word{
+                width:1200px;
+                height:auto;
+                float:left;
+                border:1px solid #bbb;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="pl_top">
+            <div class="pl_text">
+                <textarea class="" placeholder="产品满足您的预期吗？写下您的使用心得，分享给想买的他们吧！"></textarea>
+            </div>
+            <input type="submit" class="pl_submit" value="发表评论" />
+        </div>
+        <div class="pl_main">
+            <div class="pl_username">李吉勇</div>
+            <div class="pl_time">2019/5/28</div>
+            <div class="pl_word">产品满足您的预期吗？写下您的使用心得，分享给想买的他们吧！</div>
+        </div>
+    </body>
+</html>

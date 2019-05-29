@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="趣车网ModelStoreContainer" CdmEntityContainer="CarEntities">
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="趣车网Model.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserSex" ColumnName="UserSex" />
+          <ScalarProperty Name="UserAge" ColumnName="UserAge" />
+          <ScalarProperty Name="UserContant" ColumnName="UserContant" />
+          <ScalarProperty Name="USerIdnumber" ColumnName="USerIdnumber" />
+          <ScalarProperty Name="UserDrivingnumber" ColumnName="UserDrivingnumber" />
+          <ScalarProperty Name="UserLoginname" ColumnName="UserLoginname" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="UserReputation" ColumnName="UserReputation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminInfo">
+      <EntityTypeMapping TypeName="趣车网Model.AdminInfo">
+        <MappingFragment StoreEntitySet="AdminInfo">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="AdminPwd" ColumnName="AdminPwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarInfo">
+      <EntityTypeMapping TypeName="趣车网Model.CarInfo">
+        <MappingFragment StoreEntitySet="CarInfo">
+          <ScalarProperty Name="CarId" ColumnName="CarId" />
+          <ScalarProperty Name="CarType" ColumnName="CarType" />
+          <ScalarProperty Name="CarFixyear" ColumnName="CarFixyear" />
+          <ScalarProperty Name="CarDescribed" ColumnName="CarDescribed" />
+          <ScalarProperty Name="CarColor" ColumnName="CarColor" />
+          <ScalarProperty Name="CarSingleprice" ColumnName="CarSingleprice" />
+          <ScalarProperty Name="CarInventory" ColumnName="CarInventory" />
+          <ScalarProperty Name="CarImage" ColumnName="CarImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RentInfo">
+      <EntityTypeMapping TypeName="趣车网Model.RentInfo">
+        <MappingFragment StoreEntitySet="RentInfo">
+          <ScalarProperty Name="RentId" ColumnName="RentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CarId" ColumnName="CarId" />
+          <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+          <ScalarProperty Name="RentPrice" ColumnName="RentPrice" />
+          <ScalarProperty Name="RentDate" ColumnName="RentDate" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierInfo">
+      <EntityTypeMapping TypeName="趣车网Model.SupplierInfo">
+        <MappingFragment StoreEntitySet="SupplierInfo">
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierAddress" ColumnName="SupplierAddress" />
+          <ScalarProperty Name="SupplierContant" ColumnName="SupplierContant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

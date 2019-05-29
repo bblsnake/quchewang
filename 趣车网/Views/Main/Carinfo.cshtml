@@ -1,0 +1,110 @@
+﻿@model 趣车网.Models.UserInfo
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Carinfo</title>
+    <style>
+        .ci_main {
+            width: 800px;
+            height: 800px;
+            margin:10px 250px;
+        }
+
+        .ci_carimg {
+            width: 800px;
+            height: 400px;
+            display: block;
+        }
+
+            .ci_carimg img {
+                width: 500px;
+                height: 350px;
+                float: left;        
+            }
+        .sc_word{
+           width:280px;
+           height:350px;
+           float:left;
+           margin:0px 10px;
+           /*display:block;*/
+        }
+        .ci_word p {
+            width: 280px;
+            height: auto;
+            line-height: 30px;
+            font-size: 20px; 
+        }
+        .sc_price {
+            float: right;
+            color: red;
+            font-size: 20px;
+            font-weight: 700;
+            margin-right: 20px;
+        }
+        .ci_carinfo{
+            width:600px;
+            height:400px
+        }
+        .ci_p{
+            font-weight:500;
+            font-size:20px;
+        }
+        .ci_list{
+            width:260px;
+            height:45px;
+            float:left;       
+            margin-left:20px;
+        }
+            .ci_list a{
+                color:gray;
+            }
+            .ci_carimg_submit {
+                width: 100px;
+                height: 35px;
+                margin: 10px 100px 10px;
+                background: #5294DB;
+                border: #5294DB;
+                float: right;
+            }
+        .ci_carimg_submit:active{
+            background:#0026ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="ci_main">
+        <div class="ci_carimg">
+            <div>
+                <img src="~/image/timg (1).jpg" />
+            </div>
+            <div class="sc_word">
+                <div class="ci_word">
+                    <p>口水鸡打破案件视频上看到破案开始的贫困频道spas坡度卡片的可怕可怕看看扑克牌S</p>
+                </div>
+                <span class="sc_yunfei">运费:0.00</span><br />
+                <span class="sc_price">￥888W</span><br />
+                <input type="submit" class="ci_carimg_submit" value="立即购买" /><br />
+                <input type="submit" class="ci_carimg_submit" value="我再想想" />
+            </div>
+        </div>
+        <div class="ci_carinfo">
+            <p class="ci_p">基本信息</p>
+            <hr />
+            <div class="ci_list"><a href="">品牌:</a></div>
+            <div class="ci_list"><a href="">结构:</a></div>
+            <div class="ci_list"><a href="">级别:</a></div>
+            <div class="ci_list"><a href="">排量:</a></div>
+            <div class="ci_list"><a href="">油耗:</a></div>
+            <div class="ci_list"><a href="">变速箱:</a></div>
+        </div>
+    </div>
+</body>
+</html>

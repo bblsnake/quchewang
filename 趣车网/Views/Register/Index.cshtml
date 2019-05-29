@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootstrapValidator.js"></script>
+<div class="jumbotron">
+    <center><h2 class="col-md-offset-5">欢迎注册</h2></center>
+</div>
+<center>
+    <div class="col-md-offset-4 col-md-4">
+        @using (Html.BeginForm("Index", "Register", FormMethod.Post, new { @class = "form-horizontal", id = "RegisterForm" }))
+        {
+            <div class="form-group">
+                <label class="control-label col-md-3">*用户名</label>
+                <div class="col-md-6">
+                    <input class="form-control" type="text" name="userName" id="UserName" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3">*密码</label>
+                <div class="col-md-6">
+                    <input class="form-control" type="password" name="password" id="Password" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3">*确认密码</label>
+                <div class="col-md-6">
+                    <input class="form-control" type="password" name="Repassword" id="RePassword" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3">*性别</label>
+                <div class="col-md-6" style="padding-left:45px">
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" value="男" />男
+                    </label>
+                    <label class="radio-inline" style="margin-left:45px">
+                        <input type="radio" name="sex" value="女" />女
+                    </label>
+                </div>
+            </div>
+            <input name="Sex" id="Sex" style="display:none" />
+            <div class="col-md-offset-3">
+                <button id="Regis" type="submit" class="btn btn-info col-md-7" style="margin-left:15px">注册</button>
+            </div>
+        }
+    </div>
+</center>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#RegisterForm").bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                userName: {
+                    validators: {
+                        notEmpty: {
+                            message: "用户名不能为空"
+                        },
+                        stringLength: {
+                            min: 4,
+                            max: 14,
+                            message:"用户名长度必须位于4-14个字符之间"
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9\u4e00-\u9fa5]{4,14}$/,
+                            message:"用户名不能包含特殊字符"
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: "密码不能为空"
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 18,
+                            message: "密码长度必须为6-18位"
+                        },
+                        different: {
+                            field: "userId",
+                            message: "密码和账号不能相等"
+                        }
+                    }
+                },
+                Repassword: {
+                    validators: {
+                        notEmpty: {
+                            message:"确认密码不能为空"
+                        },
+                        identical: {
+                            field: "password",
+                            message:"两次输入的密码不一致"
+                        },
+                    }
+                },
+            }
+        })
+        $("input[type='radio']").each(function () {
+            $(this).click(function () {
+                if ($(this).is(":checked")) {
+                    $("#Sex").attr("value", $(this).val());
+                }
+            })
+        });
+        $("#Regis").click(function () {
+            alert("注册成功")
+
+        })
+    })
+</script>

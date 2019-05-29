@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="趣车网Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“趣车网.dbo.AdminInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="AdminInfo">
+    <Key>
+      <PropertyRef Name="AdminId" />
+      <PropertyRef Name="AdminName" />
+      <PropertyRef Name="AdminPwd" />
+    </Key>
+    <Property Name="AdminId" Type="int" Nullable="false" />
+    <Property Name="AdminName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdminPwd" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“趣车网.dbo.CarInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="CarInfo">
+    <Key>
+      <PropertyRef Name="CarId" />
+      <PropertyRef Name="CarType" />
+    </Key>
+    <Property Name="CarId" Type="int" Nullable="false" />
+    <Property Name="CarType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CarFixyear" Type="int" />
+    <Property Name="CarDescribed" Type="varchar" MaxLength="255" />
+    <Property Name="CarColor" Type="varchar" MaxLength="50" />
+    <Property Name="CarSingleprice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="CarInventory" Type="int" />
+    <Property Name="CarImage" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6013: 表/视图“趣车网.dbo.InputInfo”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="InputInfo">
+          <Property Name="InputId" Type="nchar" MaxLength="10" />
+          <Property Name="RentId" Type="nchar" MaxLength="10" />
+          <Property Name="Inputdate" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“趣车网.dbo.RentInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="RentInfo">
+    <Key>
+      <PropertyRef Name="RentId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="CarId" />
+      <PropertyRef Name="Deposit" />
+      <PropertyRef Name="RentPrice" />
+      <PropertyRef Name="RentDate" />
+      <PropertyRef Name="TotalPrice" />
+    </Key>
+    <Property Name="RentId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CarId" Type="int" Nullable="false" />
+    <Property Name="Deposit" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="RentPrice" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="RentDate" Type="int" Nullable="false" />
+    <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“趣车网.dbo.SupplierInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="SupplierInfo">
+    <Key>
+      <PropertyRef Name="SupplierId" />
+      <PropertyRef Name="SupplierName" />
+      <PropertyRef Name="SupplierAddress" />
+      <PropertyRef Name="SupplierContant" />
+    </Key>
+    <Property Name="SupplierId" Type="int" Nullable="false" />
+    <Property Name="SupplierName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SupplierAddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SupplierContant" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="UserSex" Type="varchar" MaxLength="50" />
+    <Property Name="UserAge" Type="int" />
+    <Property Name="UserContant" Type="varchar" MaxLength="50" />
+    <Property Name="USerIdnumber" Type="varchar" MaxLength="50" />
+    <Property Name="UserDrivingnumber" Type="varchar" MaxLength="50" />
+    <Property Name="UserLoginname" Type="varchar" MaxLength="50" />
+    <Property Name="UserPwd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserReputation" Type="int" />
+  </EntityType>
+  <EntityContainer Name="趣车网ModelStoreContainer">
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminInfo" EntityType="Self.AdminInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AdminInfo].[AdminId] AS [AdminId], 
+    [AdminInfo].[AdminName] AS [AdminName], 
+    [AdminInfo].[AdminPwd] AS [AdminPwd]
+    FROM [dbo].[AdminInfo] AS [AdminInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CarInfo" EntityType="Self.CarInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CarInfo].[CarId] AS [CarId], 
+    [CarInfo].[CarType] AS [CarType], 
+    [CarInfo].[CarFixyear] AS [CarFixyear], 
+    [CarInfo].[CarDescribed] AS [CarDescribed], 
+    [CarInfo].[CarColor] AS [CarColor], 
+    [CarInfo].[CarSingleprice] AS [CarSingleprice], 
+    [CarInfo].[CarInventory] AS [CarInventory], 
+    [CarInfo].[CarImage] AS [CarImage]
+    FROM [dbo].[CarInfo] AS [CarInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RentInfo" EntityType="Self.RentInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RentInfo].[RentId] AS [RentId], 
+    [RentInfo].[UserId] AS [UserId], 
+    [RentInfo].[CarId] AS [CarId], 
+    [RentInfo].[Deposit] AS [Deposit], 
+    [RentInfo].[RentPrice] AS [RentPrice], 
+    [RentInfo].[RentDate] AS [RentDate], 
+    [RentInfo].[TotalPrice] AS [TotalPrice]
+    FROM [dbo].[RentInfo] AS [RentInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SupplierInfo" EntityType="Self.SupplierInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SupplierInfo].[SupplierId] AS [SupplierId], 
+    [SupplierInfo].[SupplierName] AS [SupplierName], 
+    [SupplierInfo].[SupplierAddress] AS [SupplierAddress], 
+    [SupplierInfo].[SupplierContant] AS [SupplierContant]
+    FROM [dbo].[SupplierInfo] AS [SupplierInfo]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

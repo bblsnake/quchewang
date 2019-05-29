@@ -1,0 +1,297 @@
+﻿@model 趣车网.Models.UserInfo
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DDZX</title>
+    <style>
+        .DDZX_main {
+            width: 1000px;
+            height: 1000px;
+        }
+
+        .DDZX_nopay_p p {
+            width: 1000px;
+            float: left;
+            margin: 10px 150px 3px;
+            font-weight: 600;
+            font-size: 26px;
+            color: #ff6a00;
+            display: block;       
+        }
+        .DDZX_nopay {
+            width: 1000px;
+            height: auto;
+            float:left;
+            border: 1px solid #000000;
+            margin: 0px 150px;
+            display: block;
+        }
+
+        .DDZX_nopay_order {
+            width: 900px;
+            height: 400px;  
+            margin:0px;
+        }
+        .DDZX_nopay_order_item {
+            width: 500px;
+            height: 120px;
+            float: left;
+            margin: 10px;
+            border: 2px solid #000000;
+        }
+        .DDZX_nopay_order_img img{
+            width: 200px;
+            height: 100px;
+            float: left;
+            margin:5px;
+        }
+        .DDZX_nopay_order_word{
+            width: 280px;
+            height: 100px;
+            float: left;      
+        }          
+        .DDZX_nopay_order_price {
+                width: 100px;
+                height: 120px;
+                float: left;
+                margin:10px;
+                border: 2px solid #000000;
+            }
+        .DDZX_nopay_order_price_a {
+            width: 40px;
+            height: 20px;
+            margin: 30px 10px;
+            line-height:5;
+            color: red;
+            font-size: 20px;
+        }
+            .DDZX_nopay_order_amount {
+                width: 100px;
+                height: 120px;
+                float: left;
+                margin: 10px;
+                border: 2px solid #000000;
+            }
+        .DDZX_nopay_order_amount_1 p{
+            margin:0px 10px;
+        }
+        .DDZX_nopay_order_amount_text {
+            width: 40px;
+            height: 20px;
+            margin: 20px 10px;
+        }
+        .DDZX_nopay_order_del{
+            width:100px;
+            height:100px;
+            float:left;
+        }
+        .DDZX_nopay_order_del_submit {
+            width: 100px;
+            height: 35px;
+            background: #5294DB;
+            margin: 40px 30px;
+            border: 0;
+            font-size: 22px;
+        }
+            .DDZX_nopay_order_del_submit:active {
+                background: #0026ff;
+            }
+            .DDZX_nopay_order_submit {
+                width: 100px;
+                height: 35px;
+                font-size: 22px;
+                background: #5294DB;
+                margin: 10px 20px 10px 1000px;
+                border: 0;
+            }
+                .DDZX_nopay_order_submit:active {
+                    background: #0026ff;
+                }
+                .DDZX_nopay_order_input {
+                    width: 1000px;
+                    height: 35px;
+                }
+        ul li{
+            list-style:none;
+        }
+        .DDZX_pay {
+            width: 1000px;
+            height: auto;
+            float: left;
+            border: 1px solid #000000;
+            margin: 0px 150px;
+            display: block;
+        }
+        .DDZX_pay_p p {
+            width: 1000px;
+            float: left;
+            margin: 50px 150px 3px;
+            font-weight: 600;
+            font-size: 26px;
+            color: #ff6a00;
+            display: block;
+        }
+        .DDZX_pay_order {
+            width: 900px;
+            height: 400px;
+            margin: 0px;
+        }
+
+        .DDZX_pay_order_item {
+            width: 500px;
+            height: 120px;
+            float: left;
+            margin: 10px;
+            border: 2px solid #000000;
+        }
+
+        .DDZX_pay_order_img img {
+            width: 200px;
+            height: 100px;
+            float: left;
+            margin: 5px;
+        }
+
+        .DDZX_pay_order_word {
+            width: 280px;
+            height: 100px;
+            float: left;
+        }
+
+        .DDZX_pay_order_price {
+            width: 100px;
+            height: 120px;
+            float: left;
+            margin: 10px;
+            border: 2px solid #000000;
+        }
+        .DDZX_pay_order_price_a {
+            width: 40px;
+            height: 20px;
+            margin: 30px 10px;
+            line-height: 5;
+            color: red;
+            font-size: 20px;
+        }
+        .DDZX_pay_order_amount {
+            width: 100px;
+            height: 120px;
+            float: left;
+            margin: 10px;
+            border: 2px solid #000000;
+        }
+
+        .DDZX_pay_order_amount_1 p {
+            margin: 0px 10px;
+        }
+
+        .DDZX_pay_order_amount_text {
+            width: 40px;
+            height: 20px;
+            margin: 20px 10px;
+        }
+
+        .DDZX_pay_order_del {
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+
+        .DDZX_pay_order_del_submit {
+            width: 100px;
+            height: 35px;
+            background: #5294DB;
+            margin: 40px 30px;
+            border: 0;
+            font-size: 22px;
+        }
+            .DDZX_pay_order_del_submit:active {
+                background:#0026ff;
+            }
+
+            /*.DDZX_pay_order_submit {
+                width: 100px;
+                height: 35px;
+                font-size: 22px;
+                background: #0094ff;
+                margin-left: 900px;
+                border: 0;
+            }*/
+
+        .DDZX_pay_order_input {
+            width: 1000px;
+            height: 35px;
+        }       
+    </style>
+</head>
+<body>
+    <div class="DDZX_main">
+        <div class="DDZX_nopay_p"><p>待 支 付</p></div>
+        <div class="DDZX_nopay">
+            <ul class="DDZX_nopay_order">
+                <li class="DDZX_nopay_order_item">
+                    <div class="DDZX_nopay_order_img">
+                        <a href="">
+                            <img src="~/image/timg (1).jpg" />
+                        </a>
+                    </div>
+                    <div class="DDZX_nopay_order_word">
+                        <a style="text-decoration:none" href="">给看看那个时刻满脸满身泥巴离开莫妮卡联合会不肯见拨号键盘老表皮卡你可能</a>
+                    </div>
+                </li>
+                <li class="DDZX_nopay_order_amount">
+                    <div class="DDZX_nopay_order_amount_1">
+                        <p>数量</p>
+                        <input type="text" value="1" class="DDZX_nopay_order_amount_text" data-now="1" autocomplete="off">
+                    </div>
+                </li>
+                <li class="DDZX_nopay_order_price">
+                    <a class="DDZX_nopay_order_price_a" href="">￥00.00</a>
+                </li>
+                <li class="DDZX_nopay_order_del">
+                    <input type="submit" class="DDZX_nopay_order_del_submit" value="删除" />
+                </li>
+            </ul>
+        </div>
+        <div class="DDZX_nopay_order_input">
+            <input type="submit" class="DDZX_nopay_order_submit" value="确认支付" />
+        </div>
+        <div class="DDZX_pay_p">
+        <p>已 支 付</p>
+        </div>
+        <div class="DDZX_pay">
+            <ul class="DDZX_pay_order">
+                <li class="DDZX_pay_order_item">
+                    <div class="DDZX_pay_order_img">
+                        <a href="">
+                            <img src="~/image/timg (1).jpg" />
+                        </a>
+                    </div>
+                    <div class="DDZX_pay_order_word">
+                        <a style="text-decoration:none" href="">给看看那个时刻满脸满身泥巴离开莫妮卡联合会不肯见拨号键盘老表皮卡你可能</a>
+                    </div>
+                </li>
+                <li class="DDZX_pay_order_amount">
+                    <div class="DDZX_pay_order_amount_1">
+                        <p>数量</p>
+                        <input type="text" value="1" class="DDZX_pay_order_amount_text" data-now="1" autocomplete="off">
+                    </div>
+                </li>
+                <li class="DDZX_pay_order_price">
+                    <a class="DDZX_pay_order_price_a" href="">￥00.00</a>
+                </li>
+                <li class="DDZX_pay_order_del">
+                    <input type="submit" class="DDZX_pay_order_del_submit" value="查看物流" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="趣车网Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserSex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserAge" Type="Int32" />
+    <Property Name="UserContant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USerIdnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserDrivingnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserLoginname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserReputation" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AdminInfo">
+    <Key>
+      <PropertyRef Name="AdminId" />
+      <PropertyRef Name="AdminName" />
+      <PropertyRef Name="AdminPwd" />
+    </Key>
+    <Property Name="AdminId" Type="Int32" Nullable="false" />
+    <Property Name="AdminName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdminPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CarInfo">
+    <Key>
+      <PropertyRef Name="CarId" />
+      <PropertyRef Name="CarType" />
+    </Key>
+    <Property Name="CarId" Type="Int32" Nullable="false" />
+    <Property Name="CarType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CarFixyear" Type="Int32" />
+    <Property Name="CarDescribed" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CarColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CarSingleprice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CarInventory" Type="Int32" />
+    <Property Name="CarImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RentInfo">
+    <Key>
+      <PropertyRef Name="RentId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="CarId" />
+      <PropertyRef Name="Deposit" />
+      <PropertyRef Name="RentPrice" />
+      <PropertyRef Name="RentDate" />
+      <PropertyRef Name="TotalPrice" />
+    </Key>
+    <Property Name="RentId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CarId" Type="Int32" Nullable="false" />
+    <Property Name="Deposit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="RentPrice" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="RentDate" Type="Int32" Nullable="false" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SupplierInfo">
+    <Key>
+      <PropertyRef Name="SupplierId" />
+      <PropertyRef Name="SupplierName" />
+      <PropertyRef Name="SupplierAddress" />
+      <PropertyRef Name="SupplierContant" />
+    </Key>
+    <Property Name="SupplierId" Type="Int32" Nullable="false" />
+    <Property Name="SupplierName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SupplierAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SupplierContant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CarEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" />
+    <EntitySet Name="AdminInfo" EntityType="Self.AdminInfo" />
+    <EntitySet Name="CarInfo" EntityType="Self.CarInfo" />
+    <EntitySet Name="RentInfo" EntityType="Self.RentInfo" />
+    <EntitySet Name="SupplierInfo" EntityType="Self.SupplierInfo" />
+  </EntityContainer>
+</Schema>
